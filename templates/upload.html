@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML input type file</title>
+
+    <!--CSS code-->
+    <style>
+        h1 {
+            color: green;
+        }
+
+        h2,
+        h3 {
+            font-family: Impact;
+        }
+
+        body {
+            text-align: center;
+            background-color: pink;
+        }
+
+        label {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Upload Patient Retina Image here</h2>
+
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <input type="file" name="upload" accept="image/*">
+            <br>
+            <button class="btn btn-dark my-4" type="submit">Submit</button>
+      </form>
+</body>
+
+</html>

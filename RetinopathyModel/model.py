@@ -42,7 +42,7 @@ def load_model(path):
 
     return model
 def inference(model, fileobj, transform, classes):
-    file = fileobj.convert('RGB')
+    file = Image.open(fileobj).convert('RGB')
     img = transform(file).unsqueeze(0)
     print('Transforming your image...')
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -61,7 +61,7 @@ def inference(model, fileobj, transform, classes):
         # plt.show()
 
 
-model = load_model('classifier.pt')
+model = load_model('E:\BhargaviAkkaProject\RetinopathyModel\classifier.pt')
 print("Model loaded Succesfully")
 classes = ['No DR', 'Mild', 'Moderate', 'Severe', 'Proliferative DR']
 test_transforms = torchvision.transforms.Compose([

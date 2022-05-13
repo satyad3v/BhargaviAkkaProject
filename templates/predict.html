@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<header class="masthead text-white text-center bg-primary pt-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-9 mx-auto">
+                <h2 class=""> Diagnopathy Retinography</h2>
+                <h2 class="mb-5">Know your disease state by sending scan report Instantly</h2>
+            </div>
+            
+        </div>
+    </div>
+    <br>
+    <br>
+</header>
+
+<section>
+    <div class="container mb-4">
+        <h2 class="text-left text-bold pt-4 mb-4">Your Report</h2>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-12">
+                <p class="text-left">
+                    {{state}} - {{rating}}
+                </p>
+                
+
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <img class="img-fluid" src="{% static 'ds2.jpg' %}" alt="media download">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
